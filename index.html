@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generative Text Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>✨ Generative Text Model</h1>
+    <textarea id="prompt" placeholder="Type your prompt here..."></textarea>
+
+    <div class="settings">
+        <label>Max Length: <input type="number" id="max_length" value="50"></label>
+        <label>Temperature: <input type="number" step="0.1" id="temperature" value="0.7"></label>
+        <label>Top-k: <input type="number" id="top_k" value="50"></label>
+        <label>Top-p: <input type="number" step="0.05" id="top_p" value="0.95"></label>
+    </div>
+
+    <button id="generateBtn">Generate</button>
+
+    <div id="loading" class="hidden">⏳ Generating...</div>
+
+    <div id="outputSection" class="hidden">
+        <h3>Generated Text:</h3>
+        <p id="output"></p>
+        <button id="copyBtn">📋 Copy</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
